@@ -1,4 +1,4 @@
-import connectDB from '../db.js';
+import {connectDB} from '../db.js';
 
 async function obtenerTarea(req, res) {
   try { 
