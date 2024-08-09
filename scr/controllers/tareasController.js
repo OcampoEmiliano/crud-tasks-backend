@@ -1,4 +1,4 @@
-const connectDB = require('../db');
+import connectDB from '../db.js';
 
 async function obtenerTarea(req, res) {
   try { 
@@ -69,7 +69,8 @@ res.json({message: "tarea modificada", result });
     res.status(500).json({ message: "Internal server error" }); 
   }
 }
-  async function borrar(req, res) {
+
+async function borrar(req, res) {
     try {
       const id = +req.params.idTarea; 
   
@@ -88,7 +89,7 @@ res.json({message: "tarea modificada", result });
       res.status(500).json({ message: "Error al borrar tarea" }); // error del servidor
     }
   }
-module.exports = {
+export {
   Tareas,
   obtenerTarea,
   crear,

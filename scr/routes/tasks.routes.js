@@ -1,11 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const tareasController = require('../controllers/tareasController'); // Importa el controlador
+import { Router } from 'express';
+const router = Router();
+import { Tareas, obtenerTarea, crear, modificar, borrar } from '../controllers/tareasController.js'; // Importa el controlador
 
-router.get('/', tareasController.Tareas);
-router.get('/:id', tareasController.obtenerTarea);
-router.post('/:id', tareasController.crear);
-router.put('/:id', tareasController.modificar)
-router.delete('/:id', tareasController.borrar);
+router.get('/', Tareas);
+router.get('/:id', obtenerTarea);
+router.post('/:id', crear);
+router.put('/:id', modificar)
+router.delete('/:id', borrar);
 
-module.exports = router;
+export {router};
